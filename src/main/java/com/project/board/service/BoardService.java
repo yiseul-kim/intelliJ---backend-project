@@ -14,11 +14,7 @@ import java.util.List;
 public class BoardService {
     private final BoardMapper boardMapper;
 
-    public int boardCount() {
-        return boardMapper.boardCount();
-    }
+    public int boardCount(){return boardMapper.boardCount();}
 
-    public List<Board> boardList(){
-        return boardMapper.getList();
-    }
+    public List<Board> boardList(){return boardMapper.getList();}
 }

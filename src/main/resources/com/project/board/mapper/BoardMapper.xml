@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="wedatalab.bulletinboard.mapper.BoardMapper">
-
-
+<mapper namespace="com.project.board.mapper.BoardMapper">
     <select id="boardCount" resultType="int">
-    SELECT count(boardId) AS cnt FROM tbl_board
+        SELECT count(boardId) AS cnt FROM tbl_board
     </select>
 
-    <select id="getList" resultType="wedatalab.bulletinboard.domain.Board">
+    <select id="getList" resultType="com.project.board.domain.Board">
         SELECT
             *
         FROM tbl_board
     </select>
-</mapper>
 
+</mapper>
