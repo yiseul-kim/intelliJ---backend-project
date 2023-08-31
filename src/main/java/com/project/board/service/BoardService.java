@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +21,15 @@ public class BoardService {
 
     public Board getBoard(Long boardId){return boardMapper.getBoard(boardId);}
 
-    public void uploadBoard(Board board){
+    @Transactional
+    public void uploadBoard(Board board) {
         boardMapper.uploadBoard(board);
     }
+
+    @Transactional
+    public void updateBoard(Board board){boardMapper.updateBoard(board); }
+
+    @Transactional
+    public void deleteBoard(Long boardId){boardMapper.deleteBoard(boardId); }
+
 }

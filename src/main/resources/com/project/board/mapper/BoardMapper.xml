@@ -24,4 +24,18 @@
             (#{title}, #{content}, #{name});
     </insert>
 
+    <update id="updateBoard" parameterType="com.project.board.domain.Board">
+        UPDATE tbl_board
+        SET title=#{title}, content=#{content}
+        WHERE boardId=#{boardId};
+    </update>
+
+    <delete id="delateBoard" parameterType="Long">
+        DELETE
+        FROM tbl_board
+        WHERE boardId=#{boardId};
+    </delete>
+
+
+
 </mapper>

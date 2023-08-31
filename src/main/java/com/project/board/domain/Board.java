@@ -21,3 +21,7 @@ public class Board {
     private Long memberId;
 
 }
+
+
+
+

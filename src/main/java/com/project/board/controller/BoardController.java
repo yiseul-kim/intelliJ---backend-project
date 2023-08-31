@@ -5,9 +5,7 @@ import com.project.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 
@@ -40,6 +38,7 @@ public class BoardController {
     @GetMapping("/view")
     public String viewBoard(Model model, Long boardId){
         model.addAttribute("view", service.getBoard(boardId));
+
         return "/boards/view";
     }
 
@@ -51,6 +50,18 @@ public class BoardController {
     @PostMapping("/upload")
     public String uploadBoard(Board board){
         service.uploadBoard(board);
+        return "redirect:/board/main";
+    }
+
+    @PutMapping("/update")
+    public String updateBoard(Board board){
+        service.updateBoard(board);
+        return "redirect:/board/main";
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteBoard(Long boardId){
+        service.deleteBoard(boardId);
         return "redirect:/board/main";
     }
 
