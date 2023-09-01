@@ -23,6 +23,7 @@ public class BoardService {
 
     @Transactional
     public void uploadBoard(Board board) {
+
         boardMapper.uploadBoard(board);
     }
 
