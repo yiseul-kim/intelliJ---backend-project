@@ -53,6 +53,7 @@ public class BoardController {
         return "redirect:/board/main";
     }
 
+
     @PutMapping("/update")
     public String updateBoard(Board board){
         service.updateBoard(board);

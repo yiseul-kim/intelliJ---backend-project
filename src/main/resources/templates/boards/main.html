@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>게시판</title>
-</head>
-<body>
-<div class="container">
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>글번호</th>
-            <th>작성자</th>
-            <th>제목</th>
-            <th>조회수</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="list : ${list}">
-            <td>[[${list.boardId}]]</td>
-            <td>[[${list.name}]]</td>
-            <td>
-                <a th:href="@{/board/view(boardId=${list.boardId})}">
-                [[${list.title}]]</a>
-            </td>
-            <td>[[${list.read}]]</td>
-        </tr>
-        </tbody>
-    </table>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="LayOut/default_layout">
+
+<div>
+    <th:block layout:fragment="content">
+        <div class="container">
+            <!--        <button type="button" class="btn btn-secondary l_right m_10"-->
+            <!--                th:onclick="|location.href='@{/board/update(boardId=${update.boardId})}'|">-->
+            <!--            글쓰기-->
+            <!--        </button>-->
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>글번호</th>
+                    <th>작성자</th>
+                    <th>제목</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="list : ${list}">
+                    <td>[[${list.boardId}]]</td>
+                    <td>[[${list.name}]]</td>
+                    <td>
+                        <a th:href="@{/board/view(boardId=${list.boardId})}">
+                            [[${list.title}]]</a>
+                    </td>
+                    <td>[[${list.read}]]</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </th:block>
 </div>
-</body>
+</div>
 </html>

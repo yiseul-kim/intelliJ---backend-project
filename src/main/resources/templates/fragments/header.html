@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="headerFragment">
+    <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" type="button"
+                    th:onclick="|location.href='@{/}'|">
+                문제은행</button>
+            <button class="btn btn-sm btn-outline-secondary" type="button"
+                    th:onclick="|location.href='@{/board/main}'|">
+                문의하기</button>
+        </form>
+    </nav>
+</nav>
+
+</html>

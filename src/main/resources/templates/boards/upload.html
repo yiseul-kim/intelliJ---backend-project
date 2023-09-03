@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>업로드</title>
-</head>
-<body>
-<div class="container">
-    <form th:action="@{upload}" method="post">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="LayOut/default_layout">
+<div>
+    <th:block layout:fragment="content">
 
-        <input type="text" class="form-control" name="name">
-        <input type="text" class="form-control" name="title">
-        <textarea class="form-control" name="content"></textarea>
+        <div class="container">
+            <form th:action="@{upload}" method="post">
 
-        <button type="submit">btn</button>
-    </form>
+                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="title">
+                <textarea class="form-control" name="content"></textarea>
+
+                <button type="submit">btn</button>
+            </form>
+        </div>
+
+    </th:block>
 </div>
-</body>
+</html>
 </html>
