@@ -6,12 +6,19 @@
 
         <div class="container">
             <form th:action="@{upload}" method="post">
+                <div class="mb-3">
+                <label for="제목입력" class="form-label m_5">제목</label>
+                <input type="text" class="form-control m_10" id="제목입력" name="name" placeholder="제목을 입력해주세요.">
+                <label for="작성자입력" class="form-label m_5">작성자</label>
+                <input type="text" class="form-control m_10" id="작성자입력" name="title" placeholder="성함을 입력해주세요.">
+                </div>
 
-                <input type="text" class="form-control" name="name">
-                <input type="text" class="form-control" name="title">
-                <textarea class="form-control" name="content"></textarea>
 
-                <button type="submit">btn</button>
+                <div class="mb-3">
+                        <label for="내용입력" class="form-label m_5">내용</label>
+                        <textarea class="form-control m_10" id="내용입력" name="content" rows="5"></textarea>
+                </div>
+                <button class="btn btn-primary l_right" type="submit">저장</button>
             </form>
         </div>
 

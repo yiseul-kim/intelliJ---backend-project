@@ -14,31 +14,33 @@
 </th:block>
 
 <div>
-    <th:block layout:fragment="content">
-
-        <div class="container">
-            <p>글번호 : [[${view.boardId}]]</p>
-            <p id="title">제목 : [[${view.title}]]</p>
-            <p>작성자 : [[${view.name}]]</p>
-            내용 :
-            <div id="content">
-        <textarea readonly="readonly"
-                  class="form-control"
-                  th:text="${view.content}">
-
-        </textarea>
-
+    <th:block layout:fragment="content" class="container my-3">
+        <p>글번호 : [[${view.boardId}]]</p>
+        <div>
+            <h2 class="boarder-bottom py-2" th:text="${view.title}" id="title"></h2>
+            <div class="d-flex justify-content-end">
+                <div class="badge bg-light text-dark p-2 text-start">
+                    <!-- 글쓴이 추가 -->
+                    작성자 :
+                    <a class="mb-2" style="width: 100px"
+                       th:text="${view.name}">
+                    </a>
+                </div>
             </div>
-
-            <button id="deleteBtn" class="btn btn-danger btn-sm float-right">삭제</button>
-            <button id="updateBtn" class="btn btn-info btn-sm float-right">수정</button>
-
-            <form id="form" th:action="@{/}" method="post">
-            </form>
-
+            <hr>
+            <div class="card-text" id="content" >
+                <textarea readonly="readonly" rows="5" class="form-control" th:text="${view.content}">
+                </textarea>
+            </div>
 
         </div>
 
+
+        <button id="deleteBtn" class="btn btn-danger btn-sm float-right m-2">삭제</button>
+        <button id="updateBtn" class="btn btn-info btn-sm float-right m-2">수정</button>
+
+        <form id="form" th:action="@{/}" method="post">
+        </form>
 
         <script th:inline="javascript">
             $(document).on('ready', function (e) {
