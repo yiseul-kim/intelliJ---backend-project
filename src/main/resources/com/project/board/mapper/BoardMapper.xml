@@ -36,7 +36,4 @@
         WHERE boardId=#{boardId};
     </delete>
 
-
-<!--    paging 처리-->
-
-    <!--    게시글 리스트 조회-->
+</mapper>
