@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +31,7 @@ public class BoardService {
 
     @Transactional
     public void deleteBoard(Long boardId){boardMapper.deleteBoard(boardId); }
+
+
 
 }
